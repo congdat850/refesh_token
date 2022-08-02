@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "16a73312-9dcd-4bef-b1c3-d729d3757ac1",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "set token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"congdat.1088@gmail.com\",\n\"name\":\"Dat Nguyen Cong\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "check access token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NTk0MjczNjMsImV4cCI6MTY1OTQyODI2M30.tGP_N5dujlpokVIC_oCXuTX3wZs2CJLBPFd3CMQddbA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/secure",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"secure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "exchange access token by refesh token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"congdat.1088@gmail.com\",\n\"name\":\"Dat Nguyen Cong\",\n\"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImNvbmdkYXQuMTA4OEBnbWFpbC5jb20iLCJuYW1lIjoiRGF0IE5ndXllbiBDb25nIiwiaWF0IjoxNjU5NDI4NDEwLCJleHAiOjE2NTk1MTQ4MTB9.298cjBpE9GZUyZboIlwu_O81Hz-CftcHmfLzp0_CTVA\"}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
